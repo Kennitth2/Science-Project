@@ -1,0 +1,33 @@
+body {
+  background: linear-gradient(-45deg, red, blue, red);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  background-repeat: no-repeat;
+  height: 67.8vh;
+  margin: 0;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#dialogue {
+  font-family: monospace;
+  white-space: normal; /* preserves spaces and line breaks */
+  word-wrap: break-word;
+  border-right: 2px solid white;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}

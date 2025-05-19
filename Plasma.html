@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States Of Matter | Plasma</title>
+    <style>
+    #canvasBorder {
+      border: 4px solid black;
+      padding: 20px;
+      width: 400px;
+      margin: 200px auto;
+      background-color: #f9f9f9;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      transition: background-color 0.5s;
+    }
+
+    #Next:hover {
+        cursor:pointer;
+        background-color: lightgreen;
+    }
+
+    #Next {
+        cursor:pointer;
+        background-color: white;
+    }
+
+    #labelWithHTML {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      white-space: normal; /* preserves spaces and line breaks */
+      word-wrap: break-word;
+      border-right: 2px solid white;
+      animation: blink 0.7s step-end infinite;
+}
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+}
+
+  </style>
+
+  <script>
+    const text = "This is the Plasma state, where the particles move freely at fast speeds. it has no volume nor definate shape.";
+        const speed = 50; // milliseconds per character
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                document.getElementById("dialogue").textContent += text.charAt(index);
+                index++;
+                setTimeout(type, speed);
+                                         }
+}
+
+window.onload = type;
+  </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+          <div id="canvasBorder">
+    <h1 id="dialogue"></h1>
+    <button id="Next" onclick="Next()">Next</button>
+    </div>
+</body>
+</html>

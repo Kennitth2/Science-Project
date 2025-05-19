@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>States Of Matter</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #canvasBorder {
+      border: 4px solid black;
+      padding: 20px;
+      width: 400px;
+      margin: 200px auto;
+      background-color: #f9f9f9;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      transition: background-color 0.5s;
+    }
+
+    #Next:hover {
+        cursor:pointer;
+        background-color: lightgreen;
+    }
+
+    #Next {
+        cursor:pointer;
+        background-color: white;
+    }
+
+    #labelWithHTML {
+      font-family: monospace;
+      white-space: normal; /* preserves spaces and line breaks */
+      word-wrap: break-word;
+      border-right: 2px solid white;
+      animation: blink 0.7s step-end infinite;
+}
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+}
+
+  </style>
+</head>
+<body>
+    <div class="background">
+          <div id="canvasBorder">
+    <!-- HTML label with an ID -->
+    <h1 id="labelWithHTML"></h1>
+
+    <!-- Button to trigger text change -->
+    <button id="Next" onclick="changeTextWithHTML()">Change Text</button>
+  </div>
+
+  <script>
+    // Function to change label text with HTML content
+    function changeTextWithHTML() {
+      let labelElement = document.getElementById("labelWithHTML");
+      labelElement.innerHTML = "<id='labelWithHTML' h1>Solids!</h1>";
+
+      let button = document.getElementById("Next");
+      button.innerHTML = '<p1 onclick="window.location.href=`SolidPage.html`">Next</p1>';
+    }
+
+    const text = "Today We Are Talking About";
+    const speed = 50; // milliseconds per character
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        document.getElementById("labelWithHTML").textContent += text.charAt(index);
+        index++;
+        setTimeout(type, speed);
+  }
+}
+
+window.onload = type;
+
+  </script>
+    </div>
+</body>
+</html>
